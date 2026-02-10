@@ -1,0 +1,29 @@
+import 'package:flutter/material.dart';
+
+class Button extends StatelessWidget {
+    Button({super.key, required this.nameofbutton, required this.styleofbutton, required this.onPressed});
+  final String nameofbutton;
+  final TextStyle styleofbutton;
+  final void Function()? onPressed;
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onPressed,
+      child: Container(
+        width: 350,
+        height: 73,
+        decoration: ShapeDecoration(
+          color: const Color(0xFF34A853),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        ),
+        child: Center(
+          child: Text(
+           nameofbutton,
+            textAlign: TextAlign.center,
+            style: styleofbutton,
+          ),
+        ),
+      ),
+    );
+  }
+}
