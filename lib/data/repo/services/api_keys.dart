@@ -1,8 +1,8 @@
 class ApiKeys {
   static String token =
-      "";
+      "000000000000000000000";
   static String merchentdispalyname = "Omar";
   static String publishKey =
-      "";
-  static String customid = "";
+      "0000000000000000000";
+  static String customid = "00000000000";
 }
