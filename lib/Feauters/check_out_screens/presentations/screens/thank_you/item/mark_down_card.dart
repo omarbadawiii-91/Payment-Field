@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Markdown extends StatelessWidget {
-  const Markdown({
-    super.key,
-  });
+  const Markdown({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +17,7 @@ class Markdown extends StatelessWidget {
           height: 58,
           decoration: ShapeDecoration(
             shape: RoundedRectangleBorder(
-              side: BorderSide(
-                width: 1.50,
-                color: const Color(0xFF34A853),
-              ),
+              side: BorderSide(width: 1.50, color: const Color(0xFF34A853)),
               borderRadius: BorderRadius.circular(15),
             ),
           ),

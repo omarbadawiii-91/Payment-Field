@@ -7,6 +7,7 @@ class PaymentCards extends StatefulWidget {
   @override
   State<PaymentCards> createState() => _PaymentCardsState();
 }
+
 class _PaymentCardsState extends State<PaymentCards> {
   List<String> cardNames = [
     'asset/images/apple_pay.svg',
@@ -14,7 +15,7 @@ class _PaymentCardsState extends State<PaymentCards> {
     'asset/images/card.svg',
   ];
 
-   int isactive = 0;
+  int isactive = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -25,14 +26,17 @@ class _PaymentCardsState extends State<PaymentCards> {
         itemCount: cardNames.length,
         itemBuilder: (context, index) {
           return Padding(
-            padding:  EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(horizontal: 20),
             child: InkWell(
               onTap: () {
                 isactive = index;
-                setState(() {
-                });
+                setState(() {});
               },
-              child: Cards(isactive: isactive, cardNames: cardNames, index: index),
+              child: Cards(
+                isactive: isactive,
+                cardNames: cardNames,
+                index: index,
+              ),
             ),
           );
         },

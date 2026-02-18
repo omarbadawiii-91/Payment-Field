@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:payment/Feauters/navigator/navigation.dart';
+import 'package:payment/data/repo/services/api_keys.dart';
+
 void main() {
+  Stripe.publishableKey = ApiKeys.publishKey;
   runApp(const Checkout());
 }
 
@@ -17,9 +21,7 @@ class _CheckoutState extends State<Checkout> {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Checkout App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData(primarySwatch: Colors.blue),
       routerConfig: router,
     );
   }

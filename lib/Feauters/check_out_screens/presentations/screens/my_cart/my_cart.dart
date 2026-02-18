@@ -9,25 +9,28 @@ class MyCart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     appBar: AppBar(
-      leading: TextButton(onPressed: (){}, child:  SvgPicture.asset("asset/images/Arrow 1.svg", width: 30)),
-      title: const Text(
-    'My Cart',
-    textAlign: TextAlign.center,
-    style: ConstantStyle.style25,
-),
-centerTitle: true,
-     ),
-     body: Column(
-      children: [
-        Center(
-          child: Padding(
-            padding: const EdgeInsets.only(top: 15),
-            child: BodyOfCart(),
+      appBar: AppBar(
+        leading: TextButton(
+          onPressed: () {},
+          child: SvgPicture.asset("asset/images/Arrow 1.svg", width: 30),
+        ),
+        title: const Text(
+          'My Cart',
+          textAlign: TextAlign.center,
+          style: ConstantStyle.style25,
+        ),
+        centerTitle: true,
+      ),
+      body: Column(
+        children: [
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 15),
+              child: BodyOfCart(),
+            ),
           ),
-        )
-      ],
-     ),
+        ],
+      ),
     );
   }
 }

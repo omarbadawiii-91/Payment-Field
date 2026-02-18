@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:payment/Feauters/check_out_screens/presentations/repeated_widgets/Button.dart';
 import 'package:payment/Feauters/check_out_screens/presentations/repeated_widgets/constant_widget.dart';
+import 'package:payment/Feauters/check_out_screens/presentations/screens/my_cart/items/payment_method_bottom_sheet.dart';
 import 'package:payment/Feauters/check_out_screens/presentations/screens/my_cart/items/texts_screen_of_cart.dart';
-import 'package:payment/Feauters/check_out_screens/presentations/screens/paymeny_details/item/payment_card.dart';
+import 'package:payment/data/manger/cubit/payment_gateway_cubit.dart';
+import 'package:payment/data/repo/check_out_repo_imple.dart';
 
 class all_info_about_cart extends StatelessWidget {
-  const all_info_about_cart({
-    super.key,
-  });
+  const all_info_about_cart({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -52,33 +53,21 @@ class all_info_about_cart extends StatelessWidget {
           style: ConstantStyle.style24,
         ),
         SizedBox(height: 30),
-        Button(nameofbutton: "Complete Payment",styleofbutton: ConstantStyle.style22,
-         onPressed: () { 
-          showModalBottomSheet(context: context, builder: (context) {
-            return PaymentMethods();
-          });
-
-         })
-      ],
-    );
-  }
-}
-class PaymentMethods extends StatelessWidget {
-  const PaymentMethods({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        
-        Padding(
-          padding: const EdgeInsets.only(top: 20, bottom: 20),
-          child: PaymentCards(),
+        Button(
+          nameofbutton: "Complete Payment",
+          styleofbutton: ConstantStyle.style22,
+          onPressed: () {
+            showModalBottomSheet(
+              context: context,
+              builder: (context) {
+                return BlocProvider(
+                  create: (context) => PaymentGatewayCubit(CheckOutRepoImple()),
+                  child: PaymentMethods(),
+                );
+              },
+            );
+          },
         ),
-          SizedBox(height: 30),
-          Button(nameofbutton: "Continue", styleofbutton: ConstantStyle.style22, onPressed: (){}),
-          SizedBox(height: 40),
       ],
     );
   }

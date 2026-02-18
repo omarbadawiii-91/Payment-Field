@@ -8,7 +8,7 @@ import 'package:payment/Feauters/check_out_screens/presentations/screens/paymeny
 
 // ignore: must_be_immutable
 class PaymentScreen extends StatefulWidget {
-   PaymentScreen({super.key});
+  PaymentScreen({super.key});
   @override
   State<PaymentScreen> createState() => _PaymentScreenState();
 }
@@ -36,27 +36,38 @@ class _PaymentScreenState extends State<PaymentScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 32),
-        child: CustomScrollView(slivers: [
-          SliverToBoxAdapter(child: PaymentCards()),
-           SliverToBoxAdapter(child: SizedBox(height: 36)),
-          SliverToBoxAdapter(child: Creditcards(formKey: formKey,autovalidateMode: autovalidateMode,)),
-          SliverFillRemaining(
-            hasScrollBody: false,
-            child: Align(
-              child: Button(nameofbutton: "Pay", styleofbutton: ConstantStyle.style22, onPressed: (){
-                if(formKey.currentState!.validate()){
-                  formKey.currentState!.save();
-                  autovalidateMode = AutovalidateMode.disabled;
-                  GoRouter.of(context).go("/thankyou");
-                  setState(() {
-                  });
-                }else{
-                  autovalidateMode = AutovalidateMode.always;
-                  setState(() {
-                  });
-                }
-              })),)
-        ]),
+        child: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(child: PaymentCards()),
+            SliverToBoxAdapter(child: SizedBox(height: 36)),
+            SliverToBoxAdapter(
+              child: Creditcards(
+                formKey: formKey,
+                autovalidateMode: autovalidateMode,
+              ),
+            ),
+            SliverFillRemaining(
+              hasScrollBody: false,
+              child: Align(
+                child: Button(
+                  nameofbutton: "Pay",
+                  styleofbutton: ConstantStyle.style22,
+                  onPressed: () {
+                    if (formKey.currentState!.validate()) {
+                      formKey.currentState!.save();
+                      autovalidateMode = AutovalidateMode.disabled;
+                      GoRouter.of(context).go("/thankyou");
+                      setState(() {});
+                    } else {
+                      autovalidateMode = AutovalidateMode.always;
+                      setState(() {});
+                    }
+                  },
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

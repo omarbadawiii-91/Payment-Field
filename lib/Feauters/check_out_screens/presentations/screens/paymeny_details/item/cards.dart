@@ -21,7 +21,12 @@ class Cards extends StatelessWidget {
       duration: const Duration(milliseconds: 300),
       decoration: ShapeDecoration(
         shape: RoundedRectangleBorder(
-          side: BorderSide(width: 1.50, color: isactive == index ? const Color(0xFF34A853) : const Color.fromARGB(255, 97, 97, 97)),
+          side: BorderSide(
+            width: 1.50,
+            color: isactive == index
+                ? const Color(0xFF34A853)
+                : const Color.fromARGB(255, 97, 97, 97),
+          ),
           borderRadius: BorderRadius.circular(15),
         ),
       ),
@@ -35,8 +40,14 @@ class Cards extends StatelessWidget {
           ),
         ),
         child: Center(
-          child: SvgPicture.asset(cardNames[index], width: 103, height: 62,fit: BoxFit.scaleDown,)),
-      )
+          child: SvgPicture.asset(
+            cardNames[index],
+            width: 103,
+            height: 62,
+            fit: BoxFit.scaleDown,
+          ),
+        ),
+      ),
     );
   }
 }

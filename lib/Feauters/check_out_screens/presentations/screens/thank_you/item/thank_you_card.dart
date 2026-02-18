@@ -20,6 +20,3 @@ class Thankyoucard extends StatelessWidget {
     );
   }
 }
-
-
-

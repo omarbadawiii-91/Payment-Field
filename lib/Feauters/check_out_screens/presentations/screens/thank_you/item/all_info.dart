@@ -4,9 +4,7 @@ import 'package:payment/Feauters/check_out_screens/presentations/screens/thank_y
 import 'package:payment/Feauters/check_out_screens/presentations/screens/thank_you/item/text_screen.dart';
 
 class All_info extends StatelessWidget {
-  const All_info({
-    super.key,
-  });
+  const All_info({super.key});
 
   @override
   Widget build(BuildContext context) {

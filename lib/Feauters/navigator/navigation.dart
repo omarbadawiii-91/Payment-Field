@@ -5,17 +5,11 @@ import 'package:payment/Feauters/check_out_screens/presentations/screens/thank_y
 
 final GoRouter router = GoRouter(
   routes: [
+    GoRoute(path: '/', builder: (context, state) => const MyCart()),
+    GoRoute(path: '/payment', builder: (context, state) => PaymentScreen()),
     GoRoute(
-      path: '/',
-      builder: (context, state) => const MyCart(),
-    ),
-    GoRoute(
-      path: '/payment',
-      builder: (context, state) =>  PaymentScreen(),
-    ),
-     GoRoute(
       path: '/thankyou',
-      builder: (context, state) =>  const BodyOfThank(),
-    )
-  ]
+      builder: (context, state) => const BodyOfThank(),
+    ),
+  ],
 );
