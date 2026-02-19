@@ -2,7 +2,8 @@
 
 A modern, secure, and cross-platform mobile payment solution built . 
 Supports multiple popular payment gateways with clean UI, error handling,
-Multiple payment gateways support
+
+- Multiple payment gateways support
 - Secure payment sheet (no card data stored on device)
 - Beautiful success / failure / processing states
 -  Error handling & user-friendly messages
