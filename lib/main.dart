@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:payment/Feauters/navigator/navigation.dart';
-import 'package:payment/data/repo/services/api_keys.dart';
+import 'package:payment/data/repo/services/api_key.dart';
 
 void main() {
   Stripe.publishableKey = ApiKeys.publishKeystripe;

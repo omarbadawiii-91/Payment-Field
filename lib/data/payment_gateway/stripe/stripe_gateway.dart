@@ -3,7 +3,7 @@ import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:payment/data/api_service/apicall_service.dart';
 import 'package:payment/data/models/payment_intent_input_model.dart';
 import 'package:payment/data/models/payment_intent_sheet/payment_intent_sheet.dart';
-import 'package:payment/data/repo/services/api_keys.dart';
+import 'package:payment/data/repo/services/api_key.dart';
 import 'package:payment/data/repo/services/services_methods.dart';
 
 class StripeGateway {
@@ -25,7 +25,7 @@ class StripeGateway {
   Future initPaymentSheet({required String paymentintentclientsecret}) async {
     await Stripe.instance.initPaymentSheet(
       paymentSheetParameters: SetupPaymentSheetParameters(
-        customerId: ApiKeys.customid,
+        customerId: ApiKeys.customidstripe,
         paymentIntentClientSecret: paymentintentclientsecret,
         merchantDisplayName: ApiKeys.merchentdispalyname,
       ),

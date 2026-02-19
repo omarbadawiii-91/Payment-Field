@@ -7,7 +7,7 @@ import 'package:payment/data/payment_gateway/paypal/models/amount/amount.dart';
 import 'package:payment/data/payment_gateway/paypal/models/amount/details.dart';
 import 'package:payment/data/payment_gateway/paypal/models/items/item.dart';
 import 'package:payment/data/payment_gateway/paypal/models/items/items.dart';
-import 'package:payment/data/repo/services/api_keys.dart';
+import 'package:payment/data/repo/services/api_key.dart';
 
  class Allmethods {
    void excute_paypal_payments(BuildContext context) {
@@ -16,7 +16,7 @@ import 'package:payment/data/repo/services/api_keys.dart';
     MaterialPageRoute(
       builder: (BuildContext context) => PaypalCheckoutView(
         sandboxMode: true,
-        clientId: ApiKeys.clientid,
+        clientId: ApiKeys.clientsecretpaypal,
         secretKey: ApiKeys.secretkeypaypal,
         transactions: [
           {
