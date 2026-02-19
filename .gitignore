@@ -11,7 +11,6 @@
 .svn/
 .swiftpm/
 migrate_working_dir/
-lib/data/repo/services/api_keys.dart
 # IntelliJ related
 *.iml
 *.ipr
@@ -31,6 +30,7 @@ lib/data/repo/services/api_keys.dart
 .pub/
 /build/
 /coverage/
+lib/data/repo/services/api_keys.dart
 
 # Symbolication related
 app.*.symbols

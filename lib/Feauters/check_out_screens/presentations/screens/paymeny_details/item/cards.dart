@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class Cards extends StatelessWidget {
-  const Cards({
+class Cards extends StatefulWidget {
+   const Cards({
     super.key,
     required this.isactive,
     required this.cardNames,
     required this.index,
   });
-
   final int isactive;
   final List<String> cardNames;
   final int index;
 
+  @override
+  State<Cards> createState() => _CardsState();
+}
+
+class _CardsState extends State<Cards> {
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
@@ -23,7 +27,7 @@ class Cards extends StatelessWidget {
         shape: RoundedRectangleBorder(
           side: BorderSide(
             width: 1.50,
-            color: isactive == index
+            color: widget.isactive == widget.index
                 ? const Color(0xFF34A853)
                 : const Color.fromARGB(255, 97, 97, 97),
           ),
@@ -41,7 +45,7 @@ class Cards extends StatelessWidget {
         ),
         child: Center(
           child: SvgPicture.asset(
-            cardNames[index],
+            widget.cardNames[widget.index],
             width: 103,
             height: 62,
             fit: BoxFit.scaleDown,

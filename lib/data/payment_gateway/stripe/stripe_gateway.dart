@@ -15,7 +15,7 @@ class StripeGateway {
       contentType: Headers.formUrlEncodedContentType,
       url: "https://api.stripe.com/v1/payment_intents",
       body: paymentIntent.tojson(),
-      token: ApiKeys.token,
+      token: ApiKeys.tokenstripe,
     );
 
     var paymentIntentSheet = PaymentIntentSheet.fromJson(respone.data);
@@ -45,7 +45,8 @@ class StripeGateway {
     );
     await displayPaymentSheet();
   }
- /* Future<CustomerSession> createCustomsession(
+
+  /* Future<CustomerSession> createCustomsession(
    String customerId,
   ) async {
     var respone = await servicesMethods.post(
@@ -61,4 +62,3 @@ class StripeGateway {
     return customersession;
   }*/
 }
-

@@ -1,11 +1,11 @@
 class PaymentIntentInputSheet {
   final String amount;
   final String currency;
-  final String ?customerId;
+  final String? customerId;
   PaymentIntentInputSheet({
     required this.amount,
     required this.currency,
-     this.customerId,
+    this.customerId,
   });
 
   Map<String, dynamic> tojson() {

@@ -4,7 +4,7 @@ import 'package:payment/Feauters/navigator/navigation.dart';
 import 'package:payment/data/repo/services/api_keys.dart';
 
 void main() {
-  Stripe.publishableKey = ApiKeys.publishKey;
+  Stripe.publishableKey = ApiKeys.publishKeystripe;
   runApp(const Checkout());
 }
 

@@ -3,10 +3,9 @@
 abstract class ServicesMethods {
   post({
     required String url,
-     body,
+    body,
     required String token,
     String? contentType,
     Map<String, dynamic>? queryParameters,
-    
   });
 }

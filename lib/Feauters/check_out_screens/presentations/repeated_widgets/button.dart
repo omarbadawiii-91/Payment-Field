@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:payment/data/manger/cubit/payment_gateway_cubit.dart';
 
+// ignore: must_be_immutable
 class Button extends StatelessWidget {
   Button({
     super.key,
     required this.nameofbutton,
     required this.styleofbutton,
     required this.onPressed,
-    this.isloading = false,
+    this.isloading = false, 
   });
   final String nameofbutton;
   final TextStyle styleofbutton;

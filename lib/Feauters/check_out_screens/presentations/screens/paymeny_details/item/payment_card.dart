@@ -3,14 +3,14 @@ import 'package:payment/Feauters/check_out_screens/presentations/screens/paymeny
 
 // ignore: must_be_immutable
 class PaymentCards extends StatefulWidget {
-  const PaymentCards({super.key});
+    PaymentCards({super.key, this.updatepaymentmethod});
+    Function({required int index, required int isactive})? updatepaymentmethod;
   @override
   State<PaymentCards> createState() => _PaymentCardsState();
 }
 
 class _PaymentCardsState extends State<PaymentCards> {
   List<String> cardNames = [
-    'asset/images/apple_pay.svg',
     'asset/images/paypal.svg',
     'asset/images/card.svg',
   ];
@@ -31,8 +31,10 @@ class _PaymentCardsState extends State<PaymentCards> {
               onTap: () {
                 isactive = index;
                 setState(() {});
+                widget.updatepaymentmethod!(index: isactive, isactive: isactive);
               },
               child: Cards(
+                
                 isactive: isactive,
                 cardNames: cardNames,
                 index: index,
